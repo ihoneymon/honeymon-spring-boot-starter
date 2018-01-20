@@ -1,4 +1,4 @@
-buildscript {
+buildscript {	
 	ext {
 		springBootVersion = '1.5.9.RELEASE'
 	}
@@ -27,8 +27,17 @@ repositories {
 
 dependencies {
 	compile project(":antipang-spring-boot-starter")
-	
 	compile('org.springframework.boot:spring-boot-starter-web')
 	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+	
+ 	compile('org.springframework.boot:spring-boot-starter-data-jpa') {
+ 		exclude module: "tomcat-jdbc"
+ 	}
+ 	compile("com.zaxxer:HikariCP")
+ 	/**
+	 * Embedded DataBase 가 포함되어 있는 경우 JPA는 Embedded DataBase를 in-memory 로 설정한다.
+	 */
+	runtime("com.h2database:h2")
 }
