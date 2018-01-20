@@ -1,0 +1,62 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'maven'
+
+group = 'io.honeymon.boot.antipang'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// AntiPangAutoConfiguration
+	compile project(":antipang-spring-boot-autoconfigure")
+	
+	compile('org.springframework.boot:spring-boot-starter')
+}
+
+// deploy!!
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'http://nexus.honeymon.io/repository/release/') {
+                authentication(userName: 'deployer', password: 'honeymon')
+            }
+            snapshotRepository(url: 'http://nexus.honeymon.io/repository/snapshot/') {
+                authentication(userName: 'deployer', password: 'honeymon')
+            }
+        }
+    }
+}
+install.dependsOn uploadArchives
+
+// 소스 배포를 위한 작업
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}

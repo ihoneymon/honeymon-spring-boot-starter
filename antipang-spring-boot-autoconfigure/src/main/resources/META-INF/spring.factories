@@ -1,0 +1,4 @@
+#SpringBoot Application 이 구동될 때 찾아보는 기본경로에 위치한 spring.factories 는 스프링 부트 애플리케이션 초기구동시 구성에 영향을 끼친다.
+# `,`를 이용하면 여러 개의 자동구성클래스 지정가능 
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+	io.honeymon.boot.antipang.autoconfigure.AntiPangAutoConfiguration

@@ -1,0 +1,7 @@
+io.honeymon.antipang:
+  name: Honeymon(by App)
+  email: ihoneymon+app@gmail.com
+  site-url: https://honeymon.io
+logging:
+  level:
+    io.honeymon.boot.antipang: debug

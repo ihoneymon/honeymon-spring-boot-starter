@@ -1,0 +1,34 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+group = 'io.honeymon.boot.antipang'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile project(":antipang-spring-boot-starter")
+	
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
