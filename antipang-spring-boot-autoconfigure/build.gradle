@@ -32,4 +32,7 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
+/**
+ * Spring Boot plugin 의 bootRepackage 기능을 비활성화 시키기 위해서 사용함
+ */
 bootRepackage.enabled = false
