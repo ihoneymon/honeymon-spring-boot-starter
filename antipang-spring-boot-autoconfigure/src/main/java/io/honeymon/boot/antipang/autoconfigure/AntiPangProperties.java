@@ -1,8 +1,6 @@
 package io.honeymon.boot.antipang.autoconfigure;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.test.autoconfigure.properties.PropertyMapping;
-import org.springframework.context.annotation.PropertySource;
 
 import lombok.AccessLevel;
 import lombok.Getter;
