@@ -26,7 +26,6 @@ repositories {
 dependencies {
 	compileOnly("org.springframework.boot:spring-boot-starter")
 	compileOnly("org.springframework.boot:spring-boot-autoconfigure")
-	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
 	compileOnly('org.projectlombok:lombok')
 	
 	testCompile('org.springframework.boot:spring-boot-starter-test')

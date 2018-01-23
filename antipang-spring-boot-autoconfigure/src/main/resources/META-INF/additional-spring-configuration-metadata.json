@@ -1,0 +1,19 @@
+{
+	"properties": [
+		{
+		"name": "io.honeymon.antipang.name",
+		"type": "java.lang.String",
+		"defaultValue": "honeymon"
+		},
+		{
+		"name": "io.honeymon.antipang.email",
+		"type": "java.lang.String",
+		"defaultValue": "ihoneymon@gmail.com"
+		},
+		{
+		"name": "io.honeymon.antipang.site-url",
+		"type": "java.lang.String",
+		"defaultValue": "http://honeymon.io"
+		}
+	]
+}

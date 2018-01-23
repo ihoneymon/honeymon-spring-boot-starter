@@ -1,0 +1,15 @@
+{
+	"properties": [
+		{
+		"name": "app.name",
+		"type": "java.lang.String",
+		"description": "Application's name'",
+		"defaultValue": "honeymon"
+		},
+		{
+		"name": "app.version",
+		"type": "java.lang.String",
+		"defaultValue": "1.0.0.RELEASE"
+		}
+	]
+}

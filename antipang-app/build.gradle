@@ -29,6 +29,12 @@ dependencies {
 	compile project(":antipang-spring-boot-starter")
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-actuator')
+	/**
+	 * @ConfigurationProperties 을 사용하려면 있는게 좋다...고?
+	 * configuration metadat 를 만들려면 필요함
+	 * App 구성 편집기에서 자동완성 지원
+	 */
+	compile('org.springframework.boot:spring-boot-configuration-processor')
 	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	
@@ -43,9 +49,12 @@ dependencies {
 	runtime("com.h2database:h2")
 }
 
+compileJava.dependsOn(processResources)
+
 /**
  * bootRun 태스크에서 시스템속성 `-D{properties}={value}` 적용
  */
 bootRun {
     systemProperties System.properties
 }
+
